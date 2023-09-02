@@ -1,13 +1,11 @@
-import { AlertTitle, TextField, Button } from "@mui/material";
-import Image from "next/image";
-import Background from "../../../public/library.jpg";
+import { TextField, Button } from "@mui/material";
 import "./page.css"
 
 export default function Login() {
   return (
-    <div className="login-container">
-      <div className="login-content">
-        <AlertTitle className="title">Login</AlertTitle>
+    <main className="login-container">
+      <section className="login-content">
+        <h1 className="title">Login to your Account</h1>
         <form className="login-form">
           <TextField
             className="login-input"
@@ -15,11 +13,15 @@ export default function Login() {
           <TextField
             className="login-input"
             id="filled-basic" label="Password" variant="filled" type="password" />
-          <Button variant="contained" color="success">Submit</Button>
+          <span className="login-forgot"><a href="/forgot">Forgot Password?</a></span>
+          <Button variant="contained" color="secondary">Submit</Button>
         </form>
-      </div>
-      <div className="login-background">
-      </div>
-    </div>
+        <div className="login-details">
+          <span className="login-register">Don't have an account? <a href="/register">Register</a></span>
+        </div>
+      </section>
+      <aside className="login-background">
+      </aside>
+    </main>
   );
 }
