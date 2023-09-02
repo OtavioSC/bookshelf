@@ -1,0 +1,40 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.login-content {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  justify-content: center;
+  align-content: center;
+  text-align: center; 
+}
+
+.title {
+  font-size: 2.5rem;
+  align-self: end;
+  grid-row: 1;
+}
+
+.login-background {
+  background-image: url(../../../public/library.jpg); 
+  background-size: cover;
+}
+
+.login-form {
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-input {
+  width: 300px;
+}
