@@ -1,5 +1,5 @@
 import { TextField, Button } from "@mui/material";
-import "./page.css"
+import "./page.css";
 
 export default function Login() {
   return (
@@ -9,19 +9,32 @@ export default function Login() {
         <form className="login-form">
           <TextField
             className="login-input"
-            id="filled-basic" label="Email" variant="filled" type="email" />
+            id="filled-basic"
+            label="Email"
+            variant="filled"
+            type="email"
+          />
           <TextField
             className="login-input"
-            id="filled-basic" label="Password" variant="filled" type="password" />
-          <span className="login-forgot"><a href="/forgot">Forgot Password?</a></span>
-          <Button variant="contained" color="secondary">Submit</Button>
+            id="filled-basic"
+            label="Password"
+            variant="filled"
+            type="password"
+          />
+          <span className="login-forgot">
+            <a href="/forgot">Forgot Password?</a>
+          </span>
+          <Button variant="contained" color="secondary">
+            Submit
+          </Button>
         </form>
         <div className="login-details">
-          <span className="login-register">Don't have an account? <a href="/register">Register</a></span>
+          <span className="login-register">
+            New here? <a href="/register">Join us!</a>
+          </span>
         </div>
       </section>
-      <aside className="login-background">
-      </aside>
+      <aside className="login-background"></aside>
     </main>
   );
 }

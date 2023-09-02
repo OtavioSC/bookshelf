@@ -24,6 +24,7 @@
 .login-background {
   background-image: url(../../../public/library.jpg); 
   background-size: cover;
+  filter: grayscale(0%) sepia(100%) hue-rotate(270deg) brightness(1.2);
 }
 
 .login-form {
