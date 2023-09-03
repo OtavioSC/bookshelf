@@ -3,6 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import userRouter from "./routes/user.routes";
+
 export const createServer = (): express.Application => {
   const app = express();
   app
