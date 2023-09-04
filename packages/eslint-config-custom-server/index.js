@@ -4,8 +4,12 @@ module.exports = {
     node: true,
     es6: true,
   },
+  parser: "babel-eslint",
   parserOptions: {
-    ecmaVersion: "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    ecmaVersion: "12",
     sourceType: "module",
   },
   overrides: [
