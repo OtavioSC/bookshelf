@@ -2,14 +2,18 @@ import { createServer } from "./server";
 import { log } from "logger";
 import createDatabase from "./database/database";
 
-const port = process.env.PORT || 5001;
 const server = createServer();
+const port = process.env.PORT || 5001;
 
-server.listen(port, () => {
-  log(`api running on ${port}`);
+(async () => {
   try {
-    createDatabase();
+    await createDatabase();
+    log("Connected to the database");
+
+    server.listen(port, () => {
+      log(`Server running on port ${port}`);
+    });
   } catch (err) {
     log(err);
   }
-});
+})();
