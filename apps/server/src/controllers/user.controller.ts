@@ -1,11 +1,37 @@
 import { Request, Response, RequestHandler } from "express";
-import UserSchema from "../schema/user.schema";
+import userService from "../services/user.service"
 
-export const getAllUsers: RequestHandler = async (_: Request, res: Response) => {
-  const users = await UserSchema.find();
-  res.send(users);
+const getAllUsers: RequestHandler = async (_: Request, res: Response) => {
+  try {
+    const users = await userService.getAllUsers();
+    res.status(200).json({
+      message: "Users fetched successfully",
+      data: users
+    })
+  } catch (err) {
+    res.status(500).json({
+      message: "Error fetching users",
+      data: err
+    })
+  }
 }
 
-export const createUser: RequestHandler = async (_: Request, res: Response) => {
-  res.send("Hello World");
+const createUser: RequestHandler = async (req: Request, res: Response) => {
+  try {
+    const user = await userService.createUser(req.body);
+    res.status(201).json({
+      message: "User created successfully",
+      data: user
+    })
+  } catch (err) {
+    res.status(500).json({
+      message: "Error creating user",
+      data: err.message
+    })
+  }
 };
+
+export default {
+  getAllUsers,
+  createUser
+}
