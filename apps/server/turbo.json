@@ -1,5 +1,9 @@
 {
   "extends": ["//"],
+  "globalDependencies": [
+    ".env",
+    ".env.local"
+  ],
   "pipeline": {
     "build": {
       "outputs": ["dist/**"]
